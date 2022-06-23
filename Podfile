@@ -6,6 +6,12 @@ target 'ScratchAppUIKit' do
   use_frameworks!
 
   # Pods for ScratchAppUIKit
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxRelay'
+  pod 'Hero'
+  pod 'SDWebImage'
+  pod 'SwiftyJSON'
 
   target 'ScratchAppUIKitTests' do
     inherit! :search_paths
