@@ -18,6 +18,12 @@
 		E05D8343286491D000869048 /* ScratchAppUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D8342286491D000869048 /* ScratchAppUIKitTests.swift */; };
 		E05D834D286491D100869048 /* ScratchAppUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D834C286491D100869048 /* ScratchAppUIKitUITests.swift */; };
 		E05D834F286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D834E286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift */; };
+		E0BE4FD72864B2870045B4A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FD62864B2870045B4A7 /* Utils.swift */; };
+		E0BE4FDE2864B2D70045B4A7 /* MovieListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */; };
+		E0BE4FE02864B2DF0045B4A7 /* MovieListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FDF2864B2DF0045B4A7 /* MovieListItems.swift */; };
+		E0BE4FE32864B2F90045B4A7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FE22864B2F90045B4A7 /* LocalDataSource.swift */; };
+		E0BE4FE52864B2FF0045B4A7 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */; };
+		E0BE4FE72864B30D0045B4A7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FE62864B30D0045B4A7 /* DataSource.swift */; };
 		FDEB93B8D74E6F48E1098D5E /* Pods_ScratchAppUIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280B90D6507E897C75FA98D3 /* Pods_ScratchAppUIKitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +67,12 @@
 		E05D8348286491D100869048 /* ScratchAppUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScratchAppUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D834C286491D100869048 /* ScratchAppUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchAppUIKitUITests.swift; sourceTree = "<group>"; };
 		E05D834E286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E0BE4FD62864B2870045B4A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUseCase.swift; sourceTree = "<group>"; };
+		E0BE4FDF2864B2DF0045B4A7 /* MovieListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItems.swift; sourceTree = "<group>"; };
+		E0BE4FE22864B2F90045B4A7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		E0BE4FE62864B30D0045B4A7 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +123,6 @@
 				7C34CD4E1D9C8222E1CCA430 /* Pods-ScratchAppUIKitTests.debug.xcconfig */,
 				6878D9880EF9E371BB0B0C9B /* Pods-ScratchAppUIKitTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,12 +151,12 @@
 		E05D8327286491CD00869048 /* ScratchAppUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E05D8328286491CD00869048 /* AppDelegate.swift */,
-				E05D832A286491CD00869048 /* SceneDelegate.swift */,
-				E05D832C286491CD00869048 /* ViewController.swift */,
-				E05D8334286491CE00869048 /* Assets.xcassets */,
-				E05D8336286491CE00869048 /* LaunchScreen.storyboard */,
-				E05D8339286491CE00869048 /* Info.plist */,
+				E0BE4FD12864B1FF0045B4A7 /* SupportingFiles */,
+				E0BE4FD02864B1FA0045B4A7 /* Resource */,
+				E0BE4FCF2864B1E20045B4A7 /* Domain */,
+				E0BE4FCE2864B1DE0045B4A7 /* Feature */,
+				E0BE4FCD2864B1D90045B4A7 /* Core */,
+				E0BE4FCC2864B1D30045B4A7 /* App */,
 				E05D8331286491CD00869048 /* ScratchAppUIKit.xcdatamodeld */,
 			);
 			path = ScratchAppUIKit;
@@ -166,6 +177,124 @@
 				E05D834E286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift */,
 			);
 			path = ScratchAppUIKitUITests;
+			sourceTree = "<group>";
+		};
+		E0BE4FCC2864B1D30045B4A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E05D8328286491CD00869048 /* AppDelegate.swift */,
+				E05D832A286491CD00869048 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E0BE4FCD2864B1D90045B4A7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FD32864B26B0045B4A7 /* Helper */,
+				E0BE4FD22864B2620045B4A7 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E0BE4FCE2864B1DE0045B4A7 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FD92864B29D0045B4A7 /* MovieList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		E0BE4FCF2864B1E20045B4A7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FDB2864B2BF0045B4A7 /* UseCase */,
+				E0BE4FDA2864B2BA0045B4A7 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E0BE4FD02864B1FA0045B4A7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E05D8334286491CE00869048 /* Assets.xcassets */,
+				E05D8336286491CE00869048 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E0BE4FD12864B1FF0045B4A7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E05D8339286491CE00869048 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E0BE4FD22864B2620045B4A7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FD52864B2790045B4A7 /* Local */,
+				E0BE4FD42864B2710045B4A7 /* Remote */,
+				E0BE4FE62864B30D0045B4A7 /* DataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E0BE4FD32864B26B0045B4A7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FD62864B2870045B4A7 /* Utils.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E0BE4FD42864B2710045B4A7 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		E0BE4FD52864B2790045B4A7 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FE22864B2F90045B4A7 /* LocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		E0BE4FD92864B29D0045B4A7 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				E05D832C286491CD00869048 /* ViewController.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		E0BE4FDA2864B2BA0045B4A7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FDF2864B2DF0045B4A7 /* MovieListItems.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E0BE4FDB2864B2BF0045B4A7 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FDC2864B2C70045B4A7 /* MovieListUseCase */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E0BE4FDC2864B2C70045B4A7 /* MovieListUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */,
+			);
+			path = MovieListUseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,10 +535,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BE4FD72864B2870045B4A7 /* Utils.swift in Sources */,
 				E05D832D286491CD00869048 /* ViewController.swift in Sources */,
+				E0BE4FDE2864B2D70045B4A7 /* MovieListUseCase.swift in Sources */,
 				E05D8329286491CD00869048 /* AppDelegate.swift in Sources */,
+				E0BE4FE52864B2FF0045B4A7 /* RemoteDataSource.swift in Sources */,
 				E05D832B286491CD00869048 /* SceneDelegate.swift in Sources */,
 				E05D8333286491CD00869048 /* ScratchAppUIKit.xcdatamodeld in Sources */,
+				E0BE4FE32864B2F90045B4A7 /* LocalDataSource.swift in Sources */,
+				E0BE4FE72864B30D0045B4A7 /* DataSource.swift in Sources */,
+				E0BE4FE02864B2DF0045B4A7 /* MovieListItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +716,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H443SZWX2N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchAppUIKit/Info.plist;
+				INFOPLIST_FILE = ScratchAppUIKit/SupportingFIles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -609,7 +744,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H443SZWX2N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchAppUIKit/Info.plist;
+				INFOPLIST_FILE = ScratchAppUIKit/SupportingFIles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
