@@ -9,9 +9,22 @@
 /* Begin PBXBuildFile section */
 		C8F405B83987368BA8DE2399 /* Pods_ScratchAppUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A156E4E7BD39C6D9FE77581 /* Pods_ScratchAppUIKit.framework */; };
 		D5D1773BFAA8CF21F0056474 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CAF436E9E86AB99206D529 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework */; };
+		E022EE0A2871F09D00568656 /* MovieConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE092871F09D00568656 /* MovieConstant.swift */; };
+		E022EE0F2871F24F00568656 /* MovieEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE0E2871F24F00568656 /* MovieEndpoint.swift */; };
+		E022EE122871F74B00568656 /* NowPlayingListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE112871F74B00568656 /* NowPlayingListUseCase.swift */; };
+		E022EE172871F89400568656 /* NowPlayingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE162871F89400568656 /* NowPlayingListViewController.swift */; };
+		E022EE192871F89B00568656 /* NowPlayingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE182871F89B00568656 /* NowPlayingListViewModel.swift */; };
+		E022EE1C2871F8E300568656 /* MovieListDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE1B2871F8E300568656 /* MovieListDataFactory.swift */; };
+		E03A55002866181C0022A97C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A54FF2866181C0022A97C /* Endpoint.swift */; };
+		E03A5502286619080022A97C /* RemoteMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A5501286619080022A97C /* RemoteMethod.swift */; };
+		E03A55042866222D0022A97C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A55032866222D0022A97C /* UseCase.swift */; };
+		E03A5508286622C50022A97C /* DataFetchStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A5507286622C50022A97C /* DataFetchStrategy.swift */; };
+		E04FCD1B2891842E009F81B0 /* NowPlayingItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FCD1A2891842E009F81B0 /* NowPlayingItemRow.swift */; };
+		E04FCD1E289195EE009F81B0 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = E04FCD1D289195EE009F81B0 /* Tabman */; };
+		E050F6E0289D432300588313 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050F6DF289D432300588313 /* ViewControllerPreview.swift */; };
 		E05D8329286491CD00869048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D8328286491CD00869048 /* AppDelegate.swift */; };
 		E05D832B286491CD00869048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D832A286491CD00869048 /* SceneDelegate.swift */; };
-		E05D832D286491CD00869048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D832C286491CD00869048 /* ViewController.swift */; };
+		E05D832D286491CD00869048 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D832C286491CD00869048 /* HomeViewController.swift */; };
 		E05D8333286491CD00869048 /* ScratchAppUIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E05D8331286491CD00869048 /* ScratchAppUIKit.xcdatamodeld */; };
 		E05D8335286491CE00869048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E05D8334286491CE00869048 /* Assets.xcassets */; };
 		E05D8338286491CE00869048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05D8336286491CE00869048 /* LaunchScreen.storyboard */; };
@@ -19,7 +32,6 @@
 		E05D834D286491D100869048 /* ScratchAppUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D834C286491D100869048 /* ScratchAppUIKitUITests.swift */; };
 		E05D834F286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D834E286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift */; };
 		E0BE4FD72864B2870045B4A7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FD62864B2870045B4A7 /* Utils.swift */; };
-		E0BE4FDE2864B2D70045B4A7 /* MovieListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */; };
 		E0BE4FE02864B2DF0045B4A7 /* MovieListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FDF2864B2DF0045B4A7 /* MovieListItems.swift */; };
 		E0BE4FE32864B2F90045B4A7 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FE22864B2F90045B4A7 /* LocalDataSource.swift */; };
 		E0BE4FE52864B2FF0045B4A7 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */; };
@@ -54,10 +66,22 @@
 		66CAF436E9E86AB99206D529 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6878D9880EF9E371BB0B0C9B /* Pods-ScratchAppUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchAppUIKitTests.release.xcconfig"; path = "Target Support Files/Pods-ScratchAppUIKitTests/Pods-ScratchAppUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C34CD4E1D9C8222E1CCA430 /* Pods-ScratchAppUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchAppUIKitTests.debug.xcconfig"; path = "Target Support Files/Pods-ScratchAppUIKitTests/Pods-ScratchAppUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E022EE092871F09D00568656 /* MovieConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieConstant.swift; sourceTree = "<group>"; };
+		E022EE0E2871F24F00568656 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
+		E022EE112871F74B00568656 /* NowPlayingListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingListUseCase.swift; sourceTree = "<group>"; };
+		E022EE162871F89400568656 /* NowPlayingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingListViewController.swift; sourceTree = "<group>"; };
+		E022EE182871F89B00568656 /* NowPlayingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingListViewModel.swift; sourceTree = "<group>"; };
+		E022EE1B2871F8E300568656 /* MovieListDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDataFactory.swift; sourceTree = "<group>"; };
+		E03A54FF2866181C0022A97C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E03A5501286619080022A97C /* RemoteMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMethod.swift; sourceTree = "<group>"; };
+		E03A55032866222D0022A97C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		E03A5507286622C50022A97C /* DataFetchStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchStrategy.swift; sourceTree = "<group>"; };
+		E04FCD1A2891842E009F81B0 /* NowPlayingItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingItemRow.swift; sourceTree = "<group>"; };
+		E050F6DF289D432300588313 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		E05D8325286491CD00869048 /* ScratchAppUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchAppUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D8328286491CD00869048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05D832A286491CD00869048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E05D832C286491CD00869048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E05D832C286491CD00869048 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E05D8332286491CD00869048 /* ScratchAppUIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScratchAppUIKit.xcdatamodel; sourceTree = "<group>"; };
 		E05D8334286491CE00869048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E05D8337286491CE00869048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +92,6 @@
 		E05D834C286491D100869048 /* ScratchAppUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchAppUIKitUITests.swift; sourceTree = "<group>"; };
 		E05D834E286491D100869048 /* ScratchAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E0BE4FD62864B2870045B4A7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListUseCase.swift; sourceTree = "<group>"; };
 		E0BE4FDF2864B2DF0045B4A7 /* MovieListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItems.swift; sourceTree = "<group>"; };
 		E0BE4FE22864B2F90045B4A7 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
@@ -81,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8F405B83987368BA8DE2399 /* Pods_ScratchAppUIKit.framework in Frameworks */,
+				E04FCD1E289195EE009F81B0 /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +148,73 @@
 				6878D9880EF9E371BB0B0C9B /* Pods-ScratchAppUIKitTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E022EE0D2871F24500568656 /* Endppint */ = {
+			isa = PBXGroup;
+			children = (
+				E022EE0E2871F24F00568656 /* MovieEndpoint.swift */,
+			);
+			path = Endppint;
+			sourceTree = "<group>";
+		};
+		E022EE102871F74100568656 /* NowPlayingList */ = {
+			isa = PBXGroup;
+			children = (
+				E022EE112871F74B00568656 /* NowPlayingListUseCase.swift */,
+			);
+			path = NowPlayingList;
+			sourceTree = "<group>";
+		};
+		E022EE132871F87D00568656 /* NowPlayingList */ = {
+			isa = PBXGroup;
+			children = (
+				E04FCD19289183DD009F81B0 /* Component */,
+				E022EE152871F88900568656 /* View */,
+				E022EE142871F88400568656 /* ViewModel */,
+			);
+			path = NowPlayingList;
+			sourceTree = "<group>";
+		};
+		E022EE142871F88400568656 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E022EE182871F89B00568656 /* NowPlayingListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E022EE152871F88900568656 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E022EE162871F89400568656 /* NowPlayingListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E022EE1A2871F8D700568656 /* DataFactory */ = {
+			isa = PBXGroup;
+			children = (
+				E022EE1B2871F8E300568656 /* MovieListDataFactory.swift */,
+			);
+			path = DataFactory;
+			sourceTree = "<group>";
+		};
+		E03A54FE2865E3D20022A97C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E0BE4FE62864B30D0045B4A7 /* DataSource.swift */,
+				E03A5507286622C50022A97C /* DataFetchStrategy.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		E04FCD19289183DD009F81B0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E04FCD1A2891842E009F81B0 /* NowPlayingItemRow.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		E05D831C286491CD00869048 = {
@@ -200,7 +291,8 @@
 		E0BE4FCE2864B1DE0045B4A7 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				E0BE4FD92864B29D0045B4A7 /* MovieList */,
+				E022EE132871F87D00568656 /* NowPlayingList */,
+				E0BE4FD92864B29D0045B4A7 /* Home */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -208,6 +300,8 @@
 		E0BE4FCF2864B1E20045B4A7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E022EE1A2871F8D700568656 /* DataFactory */,
+				E022EE0D2871F24500568656 /* Endppint */,
 				E0BE4FDB2864B2BF0045B4A7 /* UseCase */,
 				E0BE4FDA2864B2BA0045B4A7 /* Entity */,
 			);
@@ -234,9 +328,9 @@
 		E0BE4FD22864B2620045B4A7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E03A54FE2865E3D20022A97C /* DataSource */,
 				E0BE4FD52864B2790045B4A7 /* Local */,
 				E0BE4FD42864B2710045B4A7 /* Remote */,
-				E0BE4FE62864B30D0045B4A7 /* DataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -245,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				E0BE4FD62864B2870045B4A7 /* Utils.swift */,
+				E022EE092871F09D00568656 /* MovieConstant.swift */,
+				E050F6DF289D432300588313 /* ViewControllerPreview.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -253,6 +349,9 @@
 			isa = PBXGroup;
 			children = (
 				E0BE4FE42864B2FF0045B4A7 /* RemoteDataSource.swift */,
+				E03A54FF2866181C0022A97C /* Endpoint.swift */,
+				E03A5501286619080022A97C /* RemoteMethod.swift */,
+				E03A55032866222D0022A97C /* UseCase.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -265,12 +364,12 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
-		E0BE4FD92864B29D0045B4A7 /* MovieList */ = {
+		E0BE4FD92864B29D0045B4A7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E05D832C286491CD00869048 /* ViewController.swift */,
+				E05D832C286491CD00869048 /* HomeViewController.swift */,
 			);
-			path = MovieList;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		E0BE4FDA2864B2BA0045B4A7 /* Entity */ = {
@@ -284,17 +383,9 @@
 		E0BE4FDB2864B2BF0045B4A7 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				E0BE4FDC2864B2C70045B4A7 /* MovieListUseCase */,
+				E022EE102871F74100568656 /* NowPlayingList */,
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		E0BE4FDC2864B2C70045B4A7 /* MovieListUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				E0BE4FDD2864B2D70045B4A7 /* MovieListUseCase.swift */,
-			);
-			path = MovieListUseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +406,9 @@
 			dependencies = (
 			);
 			name = ScratchAppUIKit;
+			packageProductDependencies = (
+				E04FCD1D289195EE009F81B0 /* Tabman */,
+			);
 			productName = ScratchAppUIKit;
 			productReference = E05D8325286491CD00869048 /* ScratchAppUIKit.app */;
 			productType = "com.apple.product-type.application";
@@ -390,6 +484,9 @@
 				Base,
 			);
 			mainGroup = E05D831C286491CD00869048;
+			packageReferences = (
+				E04FCD1C289195EE009F81B0 /* XCRemoteSwiftPackageReference "Tabman" */,
+			);
 			productRefGroup = E05D8326286491CD00869048 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -536,15 +633,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BE4FD72864B2870045B4A7 /* Utils.swift in Sources */,
-				E05D832D286491CD00869048 /* ViewController.swift in Sources */,
-				E0BE4FDE2864B2D70045B4A7 /* MovieListUseCase.swift in Sources */,
+				E04FCD1B2891842E009F81B0 /* NowPlayingItemRow.swift in Sources */,
+				E022EE1C2871F8E300568656 /* MovieListDataFactory.swift in Sources */,
+				E022EE172871F89400568656 /* NowPlayingListViewController.swift in Sources */,
+				E05D832D286491CD00869048 /* HomeViewController.swift in Sources */,
+				E022EE0A2871F09D00568656 /* MovieConstant.swift in Sources */,
+				E022EE192871F89B00568656 /* NowPlayingListViewModel.swift in Sources */,
+				E050F6E0289D432300588313 /* ViewControllerPreview.swift in Sources */,
+				E022EE122871F74B00568656 /* NowPlayingListUseCase.swift in Sources */,
+				E03A5508286622C50022A97C /* DataFetchStrategy.swift in Sources */,
+				E03A5502286619080022A97C /* RemoteMethod.swift in Sources */,
 				E05D8329286491CD00869048 /* AppDelegate.swift in Sources */,
 				E0BE4FE52864B2FF0045B4A7 /* RemoteDataSource.swift in Sources */,
+				E03A55042866222D0022A97C /* UseCase.swift in Sources */,
 				E05D832B286491CD00869048 /* SceneDelegate.swift in Sources */,
 				E05D8333286491CD00869048 /* ScratchAppUIKit.xcdatamodeld in Sources */,
 				E0BE4FE32864B2F90045B4A7 /* LocalDataSource.swift in Sources */,
 				E0BE4FE72864B30D0045B4A7 /* DataSource.swift in Sources */,
+				E03A55002866181C0022A97C /* Endpoint.swift in Sources */,
 				E0BE4FE02864B2DF0045B4A7 /* MovieListItems.swift in Sources */,
+				E022EE0F2871F24F00568656 /* MovieEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +750,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -730,7 +838,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -758,7 +866,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -882,6 +990,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E04FCD1C289195EE009F81B0 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E04FCD1D289195EE009F81B0 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E04FCD1C289195EE009F81B0 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E05D8331286491CD00869048 /* ScratchAppUIKit.xcdatamodeld */ = {
