@@ -8,14 +8,29 @@
 import Foundation
 import RxSwift
 
-class MovieListDataFactory {
-    
-    static let shared = MovieListDataFactory()
-    
-    private init() {}
+protocol MovieListDataFactoryInterface {
+    func getNowPlayingList() -> Single<MovieListRoot>
+    func getUpcomingList() -> Single<MovieListRoot>
+    func getTopRatedList() -> Single<MovieListRoot>
+    func getPopularList() -> Single<MovieListRoot>
+}
+
+class MovieListDataFactory: MovieListDataFactoryInterface {
     
     func getNowPlayingList() -> Single<MovieListRoot> {
-        return NowPlayingListUseCase().result()
+        return NowPlayingListInteractor().result()
+    }
+    
+    func getUpcomingList() -> Single<MovieListRoot> {
+        return NowPlayingListInteractor().result()
+    }
+    
+    func getTopRatedList() -> Single<MovieListRoot> {
+        return NowPlayingListInteractor().result()
+    }
+    
+    func getPopularList() -> Single<MovieListRoot> {
+        return NowPlayingListInteractor().result()
     }
     
 }

@@ -12,6 +12,8 @@ target 'ScratchAppUIKit' do
   pod 'Hero'
   pod 'SDWebImage'
   pod 'SwiftyJSON'
+  pod 'SnapKit'
+  pod 'SwiftGen'
 
   target 'ScratchAppUIKitTests' do
     inherit! :search_paths

@@ -1,21 +1,23 @@
 //
-//  NowPlayingListUseCase.swift
+//  PopularListUseCase.swift
 //  ScratchAppUIKit
 //
-//  Created by Ahmad Zaky W on 03/07/22.
+//  Created by Ahmad Zaky W on 19/08/22.
 //
 
 import Foundation
 import RxSwift
 
-class NowPlayingListUseCase: UseCase {
-    
-    typealias Entity = MovieListRoot
+protocol PopularListUseCase {
+    func result() -> Single<MovieListRoot>
+}
+
+class PopularListInteractor: PopularListUseCase {
     private let disposeBag = DisposeBag()
     
     func result() -> Single<MovieListRoot> {
         return Single.create { observer in
-            let dataSource = DataSource<MovieListRoot>(strategy: .remoteOnly, endpoint: MovieEndpoint.nowPlayingList)
+            let dataSource = DataSource<MovieListRoot>(strategy: .remoteOnly, endpoint: MovieEndpoint.popularList)
             
             let result = dataSource.result()
             
@@ -32,5 +34,4 @@ class NowPlayingListUseCase: UseCase {
             return Disposables.create()
         }
     }
-    
 }

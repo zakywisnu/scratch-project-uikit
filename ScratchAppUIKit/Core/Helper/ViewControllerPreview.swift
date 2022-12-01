@@ -23,3 +23,19 @@ struct ViewControllerPreview: UIViewControllerRepresentable {
         // not needed
     }
 }
+
+struct UIViewsPreview: UIViewRepresentable {
+    let uiViewBuilder: () -> UIView
+    
+    init(_ uiViewBuilder: @escaping () -> UIView) {
+        self.uiViewBuilder = uiViewBuilder
+    }
+    
+    func makeUIView(context: Context) -> some UIView {
+        return uiViewBuilder()
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        // not needed
+    }
+}
