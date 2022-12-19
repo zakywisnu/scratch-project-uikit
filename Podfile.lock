@@ -1,5 +1,6 @@
 PODS:
   - Hero (1.6.1)
+  - InjectHotReload (1.2.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Hero
+  - InjectHotReload
   - RxCocoa
   - RxRelay
   - RxSwift
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Hero
+    - InjectHotReload
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -36,6 +39,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  InjectHotReload: e524b7c46ec063d84e407e65df5fe251cde19b32
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   SwiftGen: 787181d7895fa2f5e7313d05de92c387010149c2
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 5cad4b97100ac4388b501ae40977c053ce31246d
+PODFILE CHECKSUM: 22d61f752b604a348bd83b5b1f58a9d3e24be2a4
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

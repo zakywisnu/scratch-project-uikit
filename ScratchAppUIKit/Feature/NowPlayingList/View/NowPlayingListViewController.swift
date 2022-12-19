@@ -37,8 +37,14 @@ class NowPlayingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setutap after loading the view.
+        startInjection()
         viewModel.fetchList()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .purple
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeInjection()
     }
     
     private func setupView() {
@@ -65,6 +71,25 @@ class NowPlayingListViewController: UIViewController {
         }
         .disposed(by: disposeBag)
     }
+    
+    private func startInjection() {
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(reloadView),
+            name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
+    }
+    
+    private func removeInjection() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"),
+            object: nil
+        )
+    }
+    
+    @objc
+    private func reloadView() {
+        self.injected()
+    }
 }
 
 extension NowPlayingListViewController: MovieItemCellProtocol, UITableViewDelegate {
@@ -76,12 +101,4 @@ extension NowPlayingListViewController: MovieItemCellProtocol, UITableViewDelega
         print("tapped movie")
     }
     
-}
-
-struct NowPlayingVCPreview: PreviewProvider {
-    static var previews: some View {
-        ViewControllerPreview {
-            NowPlayingListViewController(viewModel: NowPlayingListDefaultViewModel(dataFactory: MovieListDataFactory()))
-        }
-    }
 }

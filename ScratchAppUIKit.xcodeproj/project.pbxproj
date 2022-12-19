@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2C69EF294B216500CA9983 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2C69EE294B216500CA9983 /* ViewController+Extension.swift */; };
 		C8F405B83987368BA8DE2399 /* Pods_ScratchAppUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A156E4E7BD39C6D9FE77581 /* Pods_ScratchAppUIKit.framework */; };
 		D5D1773BFAA8CF21F0056474 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CAF436E9E86AB99206D529 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework */; };
 		E022EE0A2871F09D00568656 /* MovieConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022EE092871F09D00568656 /* MovieConstant.swift */; };
@@ -84,6 +85,7 @@
 		56EC4E5F6F003F13E0ADB898 /* Pods-ScratchAppUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchAppUIKit.debug.xcconfig"; path = "Target Support Files/Pods-ScratchAppUIKit/Pods-ScratchAppUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		66CAF436E9E86AB99206D529 /* Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScratchAppUIKit_ScratchAppUIKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6878D9880EF9E371BB0B0C9B /* Pods-ScratchAppUIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchAppUIKitTests.release.xcconfig"; path = "Target Support Files/Pods-ScratchAppUIKitTests/Pods-ScratchAppUIKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		6A2C69EE294B216500CA9983 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		7C34CD4E1D9C8222E1CCA430 /* Pods-ScratchAppUIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchAppUIKitTests.debug.xcconfig"; path = "Target Support Files/Pods-ScratchAppUIKitTests/Pods-ScratchAppUIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E022EE092871F09D00568656 /* MovieConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieConstant.swift; sourceTree = "<group>"; };
 		E022EE0E2871F24F00568656 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				E0A3A411289E86FA0081FD57 /* UIColor+Extension.swift */,
+				6A2C69EE294B216500CA9983 /* ViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				E0A3A415289E89700081FD57 /* MovieListModel.swift in Sources */,
 				E0F8C86028D097B100908370 /* MovieItem.swift in Sources */,
 				E05B29AF28AFD52D004E6647 /* TopRatedViewModel.swift in Sources */,
+				6A2C69EF294B216500CA9983 /* ViewController+Extension.swift in Sources */,
 				E03A55042866222D0022A97C /* UseCase.swift in Sources */,
 				E0AF63BA290433FE003A79F3 /* NowPlaying+Ext.swift in Sources */,
 				E0F8C85628D07C4C00908370 /* DetailMovieViewController.swift in Sources */,
