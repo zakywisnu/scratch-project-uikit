@@ -1,5 +1,6 @@
 PODS:
   - Hero (1.6.1)
+  - InjectHotReload (1.2.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -9,33 +10,48 @@ PODS:
   - SDWebImage (5.12.6):
     - SDWebImage/Core (= 5.12.6)
   - SDWebImage/Core (5.12.6)
+  - SnapKit (5.6.0)
+  - SwiftGen (6.6.1)
   - SwiftyJSON (5.0.1)
+  - Swinject (2.8.2)
 
 DEPENDENCIES:
   - Hero
+  - InjectHotReload
   - RxCocoa
   - RxRelay
   - RxSwift
   - SDWebImage
+  - SnapKit
+  - SwiftGen
   - SwiftyJSON
+  - Swinject
 
 SPEC REPOS:
   trunk:
     - Hero
+    - InjectHotReload
     - RxCocoa
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SnapKit
+    - SwiftGen
     - SwiftyJSON
+    - Swinject
 
 SPEC CHECKSUMS:
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  InjectHotReload: e524b7c46ec063d84e407e65df5fe251cde19b32
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: a47aea9e3d8816015db4e523daff50cfd294499d
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftGen: 787181d7895fa2f5e7313d05de92c387010149c2
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
 
-PODFILE CHECKSUM: 88ecd78cddf28c1733e366bab21264b5113eba9e
+PODFILE CHECKSUM: 71fefd4ce70098744d8e8499c82eaca01c236909
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

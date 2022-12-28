@@ -1,41 +1,33 @@
 //
-//  NowPlayingListViewController.swift
+//  UpcomingViewController.swift
 //  ScratchAppUIKit
 //
-//  Created by Ahmad Zaky W on 03/07/22.
+//  Created by Ahmad Zaky W on 19/08/22.
 //
 
 import UIKit
-import SwiftUI
 import SnapKit
 import RxSwift
-import RxCocoa
 
-class NowPlayingListViewController: UIViewController {
+class UpcomingViewController: UIViewController {
     
-    private let viewModel: NowPlayingListViewModel
-    
-    private var tableView = UITableView()
+    private let viewModel: UpcomingViewModel
     private let disposeBag = DisposeBag()
+    private var tableView = UITableView()
     
-    init(viewModel: NowPlayingListViewModel) {
+    init(viewModel: UpcomingViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func loadView() {
-        super.loadView()
-        setupView()
-        view.backgroundColor = UIColor(hexString: "242A32")
+        fatalError("init coder has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setutap after loading the view.
+        setupView()
+        view.backgroundColor = UIColor(hexString: "242A32")
 //        startInjection()
         viewModel.fetchList()
         tableView.backgroundColor = .clear
@@ -46,6 +38,12 @@ class NowPlayingListViewController: UIViewController {
 //        removeInjection()
     }
     
+    
+}
+
+// MARK: Private Method
+
+extension UpcomingViewController{
     private func setupView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +70,7 @@ class NowPlayingListViewController: UIViewController {
     }
 }
 
-extension NowPlayingListViewController: MovieItemCellProtocol, UITableViewDelegate {
+extension UpcomingViewController: MovieItemCellProtocol, UITableViewDelegate {
     func didTapBookmark(id: Int) {
         print("tapped ID", id)
     }
@@ -80,5 +78,4 @@ extension NowPlayingListViewController: MovieItemCellProtocol, UITableViewDelega
     func didTapMovie(id: Int) {
         print("tapped movie")
     }
-    
 }

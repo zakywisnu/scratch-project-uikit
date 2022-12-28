@@ -1,25 +1,26 @@
 //
-//  NowPlayingListViewModel.swift
+//  PopularViewModel.swift
 //  ScratchAppUIKit
 //
-//  Created by Ahmad Zaky W on 03/07/22.
+//  Created by Ahmad Zaky W on 19/08/22.
 //
 
 import Foundation
 import RxSwift
 import RxRelay
 
-protocol NowPlayingListViewModel {
+protocol PopularViewModel {
     var movie: Observable<[MovieListModel]> { get }
     
     func fetchList()
 }
 
-final class NowPlayingListDefaultViewModel: NowPlayingListViewModel {
+struct PopularDefaultViewModel: PopularViewModel {
     private let _movie: BehaviorRelay<[MovieListModel]> = .init(value: [])
-    private let useCase: NowPlayingListUseCase
+    private let useCase: PopularListUseCase
+    private let disposeBag = DisposeBag()
     
-    init(useCase: NowPlayingListUseCase) {
+    init(useCase: PopularListUseCase) {
         self.useCase = useCase
     }
     
@@ -27,19 +28,18 @@ final class NowPlayingListDefaultViewModel: NowPlayingListViewModel {
         _movie.asObservable()
     }
     
-    private let disposeBag = DisposeBag()
-    
     func fetchList() {
         useCase.result()
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .observe(on: MainScheduler.instance)
-            .subscribe { [weak self] movieList in
+            .subscribe(onSuccess: { movieList in
                 guard let result = movieList.results else { return }
                 let movies = MovieListMapper.mapMovieList(input: result)
-                self?._movie.accept(movies)
-            } onFailure: { error in
-                print("kok error: ", error.localizedDescription)
-            }.disposed(by: disposeBag)
-
+                _movie.accept(movies)
+            }, onFailure: { error in
+                print("error lagiii: ", error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
+    
 }
