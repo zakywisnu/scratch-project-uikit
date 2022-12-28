@@ -15,6 +15,7 @@ target 'ScratchAppUIKit' do
   pod 'SnapKit'
   pod 'SwiftGen'
   pod 'InjectHotReload'
+  pod 'Swinject'
 
   target 'ScratchAppUIKitTests' do
     inherit! :search_paths

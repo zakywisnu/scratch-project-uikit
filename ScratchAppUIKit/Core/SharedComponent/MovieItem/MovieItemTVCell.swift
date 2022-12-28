@@ -15,7 +15,7 @@ protocol MovieItemCellProtocol: AnyObject {
     func didTapMovie(id: Int)
 }
 
-class MovieItemCell: UITableViewCell {
+class MovieItemTVCell: UITableViewCell {
     
     var delegate: MovieItemCellProtocol?
     
@@ -118,7 +118,7 @@ class MovieItemCell: UITableViewCell {
 
 // MARK: additional method
 
-extension MovieItemCell {
+extension MovieItemTVCell {
     
     func setMovieData(movie: MovieListModel) {
         self.movie = movie
@@ -141,7 +141,7 @@ extension MovieItemCell {
 
 // MARK: setup UI
 
-extension MovieItemCell {
+extension MovieItemTVCell {
     
     private func setupUI() {
         contentView.addSubview(movieImage)
@@ -222,16 +222,6 @@ extension MovieItemCell {
             make.height.equalTo(48)
             make.right.equalTo(self.snp.right).inset(24)
         }
-    }
-}
-
-struct NowPlayingItemRowPreviews: PreviewProvider {
-    static var previews: some View {
-        UIViewsPreview {
-            MovieItemCell()
-        }
-        .preferredColorScheme(.dark)
-        .frame(height: 120, alignment: .top)
     }
 }
 

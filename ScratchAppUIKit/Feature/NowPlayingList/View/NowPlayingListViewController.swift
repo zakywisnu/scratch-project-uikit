@@ -17,7 +17,6 @@ class NowPlayingListViewController: UIViewController {
     
     private var tableView = UITableView()
     private let disposeBag = DisposeBag()
-    fileprivate var stringku: String = ""
     
     init(viewModel: NowPlayingListViewModel) {
         self.viewModel = viewModel
@@ -37,14 +36,14 @@ class NowPlayingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setutap after loading the view.
-        startInjection()
+//        startInjection()
         viewModel.fetchList()
-        tableView.backgroundColor = .purple
+        tableView.backgroundColor = .clear
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        removeInjection()
+//        removeInjection()
     }
     
     private func setupView() {
@@ -55,14 +54,14 @@ class NowPlayingListViewController: UIViewController {
             make.bottom.equalToSuperview().inset(8)
             make.left.right.equalToSuperview()
         }
-        tableView.register(MovieItemCell.self, forCellReuseIdentifier: "movieCell")
+        tableView.register(MovieItemTVCell.self, forCellReuseIdentifier: "movieCell")
         tableView.rowHeight = 130
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         viewModel
             .movie
             .bind(to: tableView.rx.items(cellIdentifier: "movieCell")) { (tv, movie, cellToUse) in
-                if let cell = cellToUse as? MovieItemCell {
+                if let cell = cellToUse as? MovieItemTVCell {
                     cell.setMovieData(movie: movie)
                     cell.selectionStyle = .none
                     cell.backgroundColor = .clear
@@ -70,25 +69,6 @@ class NowPlayingListViewController: UIViewController {
                 }
         }
         .disposed(by: disposeBag)
-    }
-    
-    private func startInjection() {
-        NotificationCenter.default.addObserver(self,
-            selector: #selector(reloadView),
-            name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
-    }
-    
-    private func removeInjection() {
-        NotificationCenter.default.removeObserver(
-            self,
-            name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"),
-            object: nil
-        )
-    }
-    
-    @objc
-    private func reloadView() {
-        self.injected()
     }
 }
 

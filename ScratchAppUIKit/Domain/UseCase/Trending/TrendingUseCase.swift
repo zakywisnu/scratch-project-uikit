@@ -1,25 +1,25 @@
 //
-//  PopularListUseCase.swift
+//  LatestUseCase.swift
 //  ScratchAppUIKit
 //
-//  Created by Ahmad Zaky W on 19/08/22.
+//  Created by Ahmad Zaky Wishnumurti on 26/12/22.
 //
 
 import Foundation
 import RxSwift
 
-protocol PopularListUseCase {
+protocol TrendingListUseCase {
     func result() -> Single<MovieListRoot>
 }
 
-class PopularListInteractor: PopularListUseCase {
+class TrendingListInteractor: TrendingListUseCase {
     private let disposeBag = DisposeBag()
     
     func result() -> Single<MovieListRoot> {
         return Single.create { observer in
             let dataSource = DataSourceImpl<MovieListRoot>(
                 strategy: .remoteOnly,
-                endpoint: MovieEndpoint.popularList
+                endpoint: MovieEndpoint.trending
             )
             
             let result = dataSource.result()

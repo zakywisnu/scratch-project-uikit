@@ -13,6 +13,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftGen (6.6.1)
   - SwiftyJSON (5.0.1)
+  - Swinject (2.8.2)
 
 DEPENDENCIES:
   - Hero
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftGen
   - SwiftyJSON
+  - Swinject
 
 SPEC REPOS:
   trunk:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftGen
     - SwiftyJSON
+    - Swinject
 
 SPEC CHECKSUMS:
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
@@ -47,7 +50,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftGen: 787181d7895fa2f5e7313d05de92c387010149c2
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
 
-PODFILE CHECKSUM: 22d61f752b604a348bd83b5b1f58a9d3e24be2a4
+PODFILE CHECKSUM: 71fefd4ce70098744d8e8499c82eaca01c236909
 
 COCOAPODS: 1.11.3

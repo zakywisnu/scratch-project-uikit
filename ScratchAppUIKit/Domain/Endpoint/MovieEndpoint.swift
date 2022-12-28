@@ -13,6 +13,7 @@ enum MovieEndpoint: Endpoint {
     case popularList
     case topRatedList
     case upcoming
+    case trending
     case detail(movieId: Int)
     
     var baseUrl: String {
@@ -29,6 +30,8 @@ enum MovieEndpoint: Endpoint {
             return "movie/top_rated"
         case .upcoming:
             return "movie/upcoming"
+        case .trending:
+            return "/trending/movie/day"
         case .detail(let movieId):
             return "movie/\(movieId)"
         }
@@ -36,14 +39,14 @@ enum MovieEndpoint: Endpoint {
     
     var method: RemoteMethod {
         switch self {
-        case .nowPlayingList, .popularList, .topRatedList, .upcoming, .detail:
+        case .nowPlayingList, .popularList, .topRatedList, .upcoming, .detail, .trending:
             return .get
         }
     }
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .nowPlayingList, .popularList, .topRatedList, .upcoming, .detail:
+        case .nowPlayingList, .popularList, .topRatedList, .upcoming, .detail, .trending:
             return nil
         }
     }

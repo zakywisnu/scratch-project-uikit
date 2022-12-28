@@ -17,7 +17,10 @@ class TopRatedListInteractor: TopRatedListUseCase {
     
     func result() -> Single<MovieListRoot> {
         return Single.create { observer in
-            let dataSource = DataSource<MovieListRoot>(strategy: .remoteOnly, endpoint: MovieEndpoint.upcoming)
+            let dataSource = DataSourceImpl<MovieListRoot>(
+                strategy: .remoteOnly,
+                endpoint: MovieEndpoint.topRatedList
+            )
             
             let result = dataSource.result()
             

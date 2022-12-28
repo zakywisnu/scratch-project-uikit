@@ -17,11 +17,11 @@ protocol PopularViewModel {
 
 struct PopularDefaultViewModel: PopularViewModel {
     private let _movie: BehaviorRelay<[MovieListModel]> = .init(value: [])
-    private let dataFactory: MovieListDataFactoryInterface
+    private let useCase: PopularListUseCase
     private let disposeBag = DisposeBag()
     
-    init(dataFactory: MovieListDataFactoryInterface) {
-        self.dataFactory = dataFactory
+    init(useCase: PopularListUseCase) {
+        self.useCase = useCase
     }
     
     var movie: Observable<[MovieListModel]> {
@@ -29,14 +29,17 @@ struct PopularDefaultViewModel: PopularViewModel {
     }
     
     func fetchList() {
-        dataFactory.getPopularList()
+        useCase.result()
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .observe(on: MainScheduler.instance)
             .subscribe(onSuccess: { movieList in
                 guard let result = movieList.results else { return }
                 let movies = MovieListMapper.mapMovieList(input: result)
                 _movie.accept(movies)
-            }).disposed(by: disposeBag)
+            }, onFailure: { error in
+                print("error lagiii: ", error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

@@ -15,12 +15,12 @@ protocol NowPlayingListViewModel {
     func fetchList()
 }
 
-struct NowPlayingListDefaultViewModel: NowPlayingListViewModel {
+final class NowPlayingListDefaultViewModel: NowPlayingListViewModel {
     private let _movie: BehaviorRelay<[MovieListModel]> = .init(value: [])
-    private let dataFactory: MovieListDataFactoryInterface
+    private let useCase: NowPlayingListUseCase
     
-    init(dataFactory: MovieListDataFactoryInterface) {
-        self.dataFactory = dataFactory
+    init(useCase: NowPlayingListUseCase) {
+        self.useCase = useCase
     }
     
     var movie: Observable<[MovieListModel]> {
@@ -30,13 +30,13 @@ struct NowPlayingListDefaultViewModel: NowPlayingListViewModel {
     private let disposeBag = DisposeBag()
     
     func fetchList() {
-        dataFactory.getNowPlayingList()
+        useCase.result()
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .observe(on: MainScheduler.instance)
-            .subscribe { movieList in
+            .subscribe { [weak self] movieList in
                 guard let result = movieList.results else { return }
                 let movies = MovieListMapper.mapMovieList(input: result)
-                _movie.accept(movies)
+                self?._movie.accept(movies)
             } onFailure: { error in
                 print("kok error: ", error.localizedDescription)
             }.disposed(by: disposeBag)

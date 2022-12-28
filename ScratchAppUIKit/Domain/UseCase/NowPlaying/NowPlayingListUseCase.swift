@@ -17,7 +17,10 @@ class NowPlayingListInteractor: NowPlayingListUseCase {
     
     func result() -> Single<MovieListRoot> {
         return Single.create { observer in
-            let dataSource = DataSource<MovieListRoot>(strategy: .remoteOnly, endpoint: MovieEndpoint.nowPlayingList)
+            let dataSource = DataSourceImpl<MovieListRoot>(
+                strategy: .remoteOnly,
+                endpoint: MovieEndpoint.nowPlayingList
+            )
             
             let result = dataSource.result()
             

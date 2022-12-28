@@ -9,21 +9,18 @@ import Foundation
 import RxSwift
 
 protocol DetailMovieUseCase {
-    func result() -> Single<MovieItems>
+    func result(id: Int) -> Single<MovieItems>
 }
 
 class DetailMovieInteractor: DetailMovieUseCase {
     private let disposeBag = DisposeBag()
     
-    private let movieId: Int
-    
-    init(movieId: Int) {
-        self.movieId = movieId
-    }
-    
-    func result() -> Single<MovieItems> {
+    func result(id: Int) -> Single<MovieItems> {
         return Single.create { observer in
-            let dataSource = DataSource<MovieItems>(strategy: .cacheFirst, endpoint: MovieEndpoint.detail(movieId: self.movieId))
+            let dataSource = DataSourceImpl<MovieItems>(
+                strategy: .cacheFirst,
+                endpoint: MovieEndpoint.detail(movieId: id)
+            )
             
             let result = dataSource.result()
             

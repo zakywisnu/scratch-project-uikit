@@ -8,10 +8,15 @@
 import Foundation
 import RxSwift
 
-struct RemoteDataSource<Entity: Decodable>{
+protocol RemoteDataSource {
+    func makeRequest<T: Decodable>(endpoint: Endpoint) -> Single<T>
+}
+
+struct RemoteDataSourceImpl: RemoteDataSource {
+    
     private var urlSession = URLSession(configuration: .default)
     
-    func makeRequest(endpoint: Endpoint) -> Single<Entity> {
+    func makeRequest<T: Decodable>(endpoint: Endpoint) -> Single<T> {
         Single.create { observer in
             let urlRequest = createUrlRequest(endpoint: endpoint)
             
@@ -32,7 +37,7 @@ struct RemoteDataSource<Entity: Decodable>{
                 }
                 
                 do {
-                    let objs = try JSONDecoder().decode(Entity.self, from: data)
+                    let objs = try JSONDecoder().decode(T.self, from: data)
                     observer(.success(objs))
                 } catch {
                     observer(.failure(URLError.failedDecoding(data: data)))
